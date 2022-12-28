@@ -1,55 +1,34 @@
-var h1 = document.getElementsByTagName("h1")[0];
-var start = document.getElementById("strt");
-var stop = document.getElementById("stp");
-var reset = document.getElementById("rst");
-var seconds = 0;
-var minutes = 0;
-var hours = 0;
-var t;
+document.getElementById("main-form").addEventListener("submit", checkForm);
 
-function tick() {
-  seconds++;
-  if (seconds >= 60) {
-    seconds = 0;
-    minutes++;
-    if (minutes >= 60) {
-      minutes = 0;
-      hours++;
-    }
+function checkForm(event) {
+  event.preventDefault();
+  let el = document.getElementById("main-form");
+
+  let name = el.name.value;
+  console.log("Name: " + name);
+  let pass = el.pass.value;
+  console.log("Password: " + pass);
+  let repass = el.repass.value;
+  console.log("Password check: " + repass);
+  let state = el.state.value;
+  console.log("Password: " + state);
+
+  let fail = "";
+
+  if (name == "" || pass == "" || state == "") {
+    fail = "Fill in all the fields!";
+  } else if (name.length <= 1 || name.length > 50) {
+    fail = "Error name";
+  } else if (pass != repass) {
+    fail = "Passwords must be the same";
+  } else if (pass.split("&").length > 1) {
+    fail = "Incorrect password";
   }
-}
-function add() {
-  tick();
-  h1.textContent =
-    (hours > 9 ? hours : "0" + hours) +
-    ":" +
-    (minutes > 9 ? minutes : "0" + minutes) +
-    ":" +
-    (seconds > 9 ? seconds : "0" + seconds);
-  timer();
-}
-function timer() {
-  t = setTimeout(add, 1000);
-}
 
-timer();
-start.onclick = timer;
-stop.onclick = function () {
-  clearTimeout(t);
-};
-reset.onclick = function () {
-  h1.textContent = "00:00:00";
-  seconds = 0;
-  minutes = 0;
-  hours = 0;
-};
-
-// colors
-var colorBtns = document.getElementsByClassName("colorButton");
-for (var btn of colorBtns) {
-  btn.addEventListener("click", function (event) {
-    console.log(event);
-    var color = event.target.innerHTML;
-    document.body.style.color = color;
-  });
+  if (fail != "") {
+    document.getElementById("error").innerHTML = fail;
+  } else {
+    alert("Data sent");
+    window.location = "https://translate.google.com/?hl=ru";
+  }
 }
