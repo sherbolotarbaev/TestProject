@@ -29,6 +29,6 @@ function checkForm(event) {
     document.getElementById("error").innerHTML = fail;
   } else {
     alert("Data sent");
-    window.location = "https://translate.google.com/?hl=ru";
+    window.location = "portfolio-devx.netlify.app";
   }
 }
