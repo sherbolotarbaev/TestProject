@@ -50,9 +50,6 @@ h3 {
 }
 
 @media (max-width: 1000px) {
-  .container {
-    padding-top: 80px;
-  }
 
   .p2 {
     font-size: 20px;
