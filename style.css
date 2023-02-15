@@ -23,6 +23,7 @@ body {
   display: flex;
   text-align: center;
   flex-direction: column;
+  text-align: center;
   min-width: 200px;
   margin: 0 auto;
 }
@@ -38,25 +39,34 @@ h3 {
   font-size: 45px;
 }
 
-p {
-  padding-top: 2rem;
-  width: 40%;
+.p2 {
+  font-size: 14px;
+  padding-top: 1rem;
+}
+
+.p2 a {
+  text-decoration: underline;
 }
 
 @media (max-width: 1000px) {
-  p {
-    padding-top: 2rem;
-    width: 80%;
+  .container {
+    padding-top: 100px;
+  }
+
+  .p2 {
+    font-size: 20px;
+    padding-top: 0.7rem;
+    padding-left: 1rem;
+    width: 100%;
   }
 }
 
 img {
   border-radius: 20px;
-  position: relative;
 }
 
 .btn {
-  margin: 20px 10px;
+  margin: 40px 10px;
   position: relative;
   text-align: center;
   border: none;
