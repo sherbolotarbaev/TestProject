@@ -70,7 +70,9 @@ img {
 }
 
 .btn {
+  display: block;
   margin: 40px 10px;
+  padding: 0.6rem;
   position: relative;
   text-align: center;
   border: none;
@@ -81,15 +83,48 @@ img {
 }
 
 .btn:hover {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .btn h2 {
   font-size: 22px;
   font-weight: 700;
-  padding: 0.7rem;
   letter-spacing: 0.1rem;
   color: #111B21;
   text-transform: uppercase;
   transition: 0.2s;
+}
+
+.btn:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }
