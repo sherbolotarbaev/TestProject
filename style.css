@@ -6,7 +6,7 @@
   margin: 0;
   text-decoration: none;
   list-style-type: none;
-  color: #111B21;
+  color: #1b2932;
 }
 
 body {
@@ -66,7 +66,17 @@ h3 {
 }
 
 img {
-  border-radius: 20px;
+  object-fit: cover;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+img:hover {
+  transform:
+    perspective(75em) rotateX(38deg);
+  box-shadow:
+    rgba(22, 31, 39, 0.42) 0px 60px 223px -25px,
+    rgba(19, 26, 32, 0.08) 0px 35px 175px -35px;
 }
 
 .btn {
@@ -77,23 +87,21 @@ img {
   text-align: center;
   border: none;
   border-radius: 60px;
-  border: 2px solid #111B21;
-  background-color: #25d366;
   overflow: hidden;
-  transition: background-color 0.5s;
+
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  border: 2px solid #1b2932;
+  background-color: #25d366;
+  color: #111B21;
+  text-transform: uppercase;
+  transition: 1s;
 }
 
 .btn:hover {
-  background-color: #ffff;
-}
-
-.btn h2 {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  color: #111B21;
-  text-transform: uppercase;
-  transition: 0.2s;
+  background-color: #1b2932;
+  color: #fff;
 }
 
 .btn:before {
